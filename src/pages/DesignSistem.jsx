@@ -1,7 +1,9 @@
 import Button from "../components/ui/Button";
 import Heading from "../components/ui/Heading";
 import Paragraf from "../components/ui/Paragraf";
+import Card from "../components/ui/Card"
 export default function DesignSistem(){
+    
     return(
         <div className="space-y-4"> 
         <div>
@@ -27,6 +29,9 @@ export default function DesignSistem(){
 
         <div>
             <Heading level={1}>CARD</Heading>
+            <div className="w-90">
+            <Card></Card>
+            </div>
         </div>
 
         </div>
