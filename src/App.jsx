@@ -5,12 +5,15 @@ import DefaulLayout from "./layout/DefaultLayout";
 import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
 import PagenotFound from "./pages/PageNotFound";
+//debug page
+import DesignSistem from "./pages/DesignSistem";
 
 
 export default function App(){
   return(
     <BrowserRouter>
       <Routes>
+        <Route path="/designSistem" element={<DesignSistem />} />
         <Route element={<DefaulLayout />}>
           <Route index path="/" element={<HomePage />} />
           <Route path="/movies/:id" element={<MoviePage />} />
