@@ -26,6 +26,7 @@ export default function HomePage(){
                             release_year={movie.release_year}
                             abstract={movie.abstract}
                             id={movie.id}
+                            vote={movie.avg_vote}
                             />
                         </div>
                     )

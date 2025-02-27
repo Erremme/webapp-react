@@ -1,8 +1,9 @@
 import Heading from "./Heading"
 import Paragraf from "./Paragraf"
 import Button from "./Button"
+import Stars from "./Stars"
 import { Link } from "react-router"
-export default function card({image, title, director,genre , release_year, abstract, id  }){
+export default function card({image, title, director,genre , release_year, abstract, id, vote }){
     return(
         <div className="flex bg-white h-full rounded-xl shadow-xl">
             <div className="w-1/2">
@@ -12,6 +13,7 @@ export default function card({image, title, director,genre , release_year, abstr
               <Heading level={3}>{title}</Heading>
               <Heading level={4}>{director}</Heading>
               <Heading level={4}>{genre}</Heading>
+              <Stars vote={vote} /> 
               <Paragraf color="secondary">{release_year}</Paragraf>
               <Paragraf size="sm">{abstract}</Paragraf> 
               <div className="mt-auto text-center">
