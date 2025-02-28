@@ -6,6 +6,7 @@ import { Link } from "react-router";
 import Heading from"../components/ui/Heading"
 import Paragraf from "../components/ui/Paragraf";
 import Stars from "../components/ui/Stars";
+import Form from "../components/ui/Form";
 
 export default function MoviePage(){
    const {id} = useParams()
@@ -15,7 +16,7 @@ export default function MoviePage(){
     const fetchMovie = () => {
         axios.get(`/movies/${id}`).then((res) => {
             setMovie(res.data);
-            console.log(res.data)
+            
         })
         .catch((err) =>{
             if(err.status === 404){
@@ -28,7 +29,7 @@ export default function MoviePage(){
 
     useEffect(fetchMovie, [id, navigate])
     return(
-        <div className="max-w-5xl mx-auto ">
+        <div className="max-w-5xl mx-auto  ">
             <Link className="font-bold text-blue-950 bg-white p-2 rounded-lg " to="/"><i className="fa-solid fa-house text-blue-950 hover:text-blue-400"></i></Link>
             <div className="grid grid-cols-12 gap-2 shadow-xl my-4">
                 <div className="col-span-12 md:col-span-4">
@@ -53,9 +54,9 @@ export default function MoviePage(){
                     <Heading level={2}> Recensioni</Heading>
                     <ul>
                         
-                         {movie?.reviews?.map((item , index) => {
+                         {movie?.reviews?.map((item) => {
                             return(
-                        <li key={item.index}>
+                        <li key={item.id}>
                         <Heading level={3}>{item.name}</Heading>
                         <Stars vote={item.vote} />
                         <Paragraf>{item.text}</Paragraf>
@@ -65,10 +66,12 @@ export default function MoviePage(){
                        
                     })} 
 
-                         
-
                     </ul>
 
+                </div>
+
+                <div className="bg-white p-4 my-4 rounded-xl shadow-xl">
+                    <Form onFormSubmitted ={fetchMovie}/>
                 </div>
 
 

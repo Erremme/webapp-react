@@ -18,7 +18,7 @@ export default function card({image, title, director,genre , release_year, abstr
               <Paragraf size="sm">{abstract}</Paragraf> 
               <div className="mt-auto text-center">
                 <Link to={`/movies/${id}`}>
-              <Button  type="primary">Leggi di più</Button>
+              <Button  variant="primary">Leggi di più</Button>
               </Link>
               </div>
             </div>

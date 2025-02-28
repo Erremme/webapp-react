@@ -2,14 +2,15 @@ import Button from "../components/ui/Button";
 import Heading from "../components/ui/Heading";
 import Paragraf from "../components/ui/Paragraf";
 import Card from "../components/ui/Card"
+import Form from "../components/ui/Form";
 export default function DesignSistem(){
     
     return(
         <div className="space-y-4"> 
         <div>
             <Heading level={1}>Buttons</Heading>
-            <Button type="primary">Click me</Button>
-            <Button type="secondary">Click me</Button>
+            <Button variant="primary">Click me</Button>
+            <Button variant="secondary">Click me</Button>
             <Button>Default</Button>
         </div>
 
@@ -32,6 +33,11 @@ export default function DesignSistem(){
             <div className="w-90">
             <Card></Card>
             </div>
+        </div>
+
+        <div>
+            <Heading level={1}>Form</Heading>
+            <Form />
         </div>
 
         </div>
