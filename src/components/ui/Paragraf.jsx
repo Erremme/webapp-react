@@ -1,4 +1,4 @@
-export default function Paragraf({size="md", color="primary", children}){
+export default function Paragraf({size="md", color="primary", children , className}){
   const sizes ={
     "md":"text-md",
     "sm":"text-sm"
@@ -9,5 +9,5 @@ export default function Paragraf({size="md", color="primary", children}){
     "secondary":"text-neutral-500"
   }
 
-    return <p className={`${sizes[size]} ${colors[color]}`}>{children}</p>
+    return <p className={`${className} ${sizes[size]} ${colors[color]}`}>{children}</p>
 }

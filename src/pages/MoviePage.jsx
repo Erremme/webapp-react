@@ -49,14 +49,14 @@ export default function MoviePage(){
 
             </div>
 
-            
+            {movie?.reviews?.length > 0 &&
             <div className="bg-white p-4 mt-4 space-y-4 rounded-xl shadow-xl ">
                     <Heading level={2}> Recensioni</Heading>
-                    <ul>
+                    <ul className="space-y-3">
                         
                          {movie?.reviews?.map((item) => {
                             return(
-                        <li key={item.id}>
+                        <li className=" border-b-1 border-b-neutral-400" key={item.id}>
                         <Heading level={3}>{item.name}</Heading>
                         <Stars vote={item.vote} />
                         <Paragraf>{item.text}</Paragraf>
@@ -69,6 +69,7 @@ export default function MoviePage(){
                     </ul>
 
                 </div>
+                }
 
                 <div className="bg-white p-4 my-4 rounded-xl shadow-xl">
                     <Form onFormSubmitted ={fetchMovie}/>

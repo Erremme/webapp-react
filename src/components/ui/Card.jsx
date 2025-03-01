@@ -15,7 +15,7 @@ export default function card({image, title, director,genre , release_year, abstr
               <Heading level={4}>{genre}</Heading>
               <Stars vote={vote} /> 
               <Paragraf color="secondary">{release_year}</Paragraf>
-              <Paragraf size="sm">{abstract}</Paragraf> 
+              <Paragraf className="truncate"  size="sm">{abstract}</Paragraf> 
               <div className="mt-auto text-center">
                 <Link to={`/movies/${id}`}>
               <Button  variant="primary">Leggi di più</Button>
