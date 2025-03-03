@@ -14,6 +14,8 @@ export default function Alert({title, text , variant = "info", handleAlertClose}
     }
 
     if(!title || !text ) return null;
+
+    
     return(
         <div className={ `${variants[variant]}  w-sm  p-2 fixed bottom-15 right-5 rounded-xl flex justify-between`}>
             <div>

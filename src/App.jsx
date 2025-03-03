@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 //Context
 import { AlertProvider } from "./context/AlertContext";
+import { LoaderProvider } from "./context/LoaderContext";
 //Layout
 import DefaulLayout from "./layout/DefaultLayout";
 //pages
@@ -15,6 +16,7 @@ import CreateMovie from "./pages/CreateMovie";
 
 export default function App(){
   return(
+    <LoaderProvider>
     <AlertProvider>
     <BrowserRouter>
       <Routes>
@@ -28,5 +30,6 @@ export default function App(){
       </Routes> 
     </BrowserRouter>
     </AlertProvider>
+    </LoaderProvider>
   )
 }
