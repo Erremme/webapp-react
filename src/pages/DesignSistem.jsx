@@ -3,7 +3,9 @@ import Heading from "../components/ui/Heading";
 import Paragraf from "../components/ui/Paragraf";
 import Card from "../components/ui/Card"
 import Form from "../components/ui/Form";
+
 export default function DesignSistem(){
+   
     
     return(
         <div className="space-y-4"> 
@@ -38,6 +40,12 @@ export default function DesignSistem(){
         <div>
             <Heading level={1}>Form</Heading>
             <Form />
+        </div>
+
+        <div>
+            
+
+
         </div>
 
         </div>

@@ -1,4 +1,4 @@
-export default function Paragraf({size="md", color="primary", children , className}){
+export default function Paragraf({size="md", color, children , className}){
   const sizes ={
     "md":"text-md",
     "sm":"text-sm"

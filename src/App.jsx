@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router";
+//Context
+import { AlertProvider } from "./context/AlertContext";
 //Layout
 import DefaulLayout from "./layout/DefaultLayout";
 //pages
@@ -13,6 +15,7 @@ import CreateMovie from "./pages/CreateMovie";
 
 export default function App(){
   return(
+    <AlertProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/designSistem" element={<DesignSistem />} />
@@ -24,5 +27,6 @@ export default function App(){
         </Route>
       </Routes> 
     </BrowserRouter>
+    </AlertProvider>
   )
 }

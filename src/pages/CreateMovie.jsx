@@ -130,6 +130,7 @@ export default function CreateMovie(){
                 className=" px-1 border-1 border-neutral-400 rounded-lg" 
                 id="image" 
                 name="image"
+                accept="image/*"
                 type="file" 
                 required 
                 onChange={(e) => handleField("image" , e.target.files[0])}

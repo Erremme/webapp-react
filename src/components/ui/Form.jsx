@@ -1,8 +1,11 @@
-import Button from "../ui/Button"
 import { useState } from "react"
 import { useParams } from "react-router";
 import axios from "../../api/axios";
+//Components
 import Heading from "./Heading";
+import Button from "../ui/Button"
+//Context
+import { UseAlertContext } from "../../context/AlertContext";
 
 
 const initialFormData ={
@@ -14,6 +17,7 @@ export default function Form({onFormSubmitted}){
 
     const [formData , setFormdata]= useState(initialFormData);
     const { id } = useParams();
+    const {setAlertData} = UseAlertContext()
     
 
     const handleField = (fieldName , fieldValue) => {
@@ -33,6 +37,12 @@ export default function Form({onFormSubmitted}){
         }
        }).then(() =>{
         setFormdata(initialFormData)
+        setAlertData({
+            title:"Aggiunta recensione",
+            text:"Una nuova recensione è stata aggiunta",
+            variant:"success",
+        })
+
         onFormSubmitted()
        })
         
