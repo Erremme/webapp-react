@@ -7,13 +7,19 @@ import Heading from"../components/ui/Heading"
 import Paragraf from "../components/ui/Paragraf";
 import Stars from "../components/ui/Stars";
 import Form from "../components/ui/Form";
+//Context
+import { useLoadercontext } from "../context/LoaderContext";
 
 export default function MoviePage(){
    const {id} = useParams()
    const [movie , setMovie] = useState({})
    const navigate = useNavigate()
+   const {setIsLoading} = useLoadercontext()
+
     
     const fetchMovie = () => {
+        setIsLoading(true)
+
         axios.get(`/movies/${id}`).then((res) => {
             setMovie(res.data);
             
@@ -22,7 +28,7 @@ export default function MoviePage(){
             if(err.status === 404){
                 navigate("/404")
             }
-        })
+        }).finally(() => setIsLoading(false))
     }
 
    

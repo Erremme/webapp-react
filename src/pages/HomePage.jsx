@@ -2,13 +2,18 @@ import axios from "../api/axios"
 import { useEffect, useState } from "react";
 //component
 import Card from "../components/ui/Card"
+//Context
+import { useLoadercontext } from "../context/LoaderContext";
 
 export default function HomePage(){
-    const [movies, setMovies] = useState([])
+    const {setIsLoading} = useLoadercontext()
+        const [movies, setMovies] = useState([])
+
     const fetchMovies = () => {
+        setIsLoading(true)
         axios.get('/movies').then((res) => {
             setMovies(res.data);
-        })
+        }).finally(() => setIsLoading(false))
     }
 
     useEffect(fetchMovies, [])
