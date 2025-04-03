@@ -1,4 +1,4 @@
-export default function Heading({level, children }){
+export default function Heading({level, children  }){
 if(level === 1){
     return <h1 className="text-4xl font-bold">{children}</h1>
 }

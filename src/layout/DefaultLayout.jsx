@@ -8,7 +8,7 @@ import Loader from "../components/ui/Loader"
 export default function DefaulLayout(){
     const {isLoading} = useLoadercontext()
     return(
-        <div className=" bg-neutral-200 px-4">
+        <div className="  px-4">
         <Header />
         <main  className="py-6 my-4">
             {isLoading ? <Loader /> : <Outlet />}

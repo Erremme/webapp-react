@@ -10,5 +10,5 @@ export default function Stars({vote}) {
         }
     }
 
-    return <div className="text-amber-500" >{starIcons}</div>
+    return <div className="text-red-500" >{starIcons}</div>
 }

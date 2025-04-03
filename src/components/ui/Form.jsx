@@ -49,12 +49,12 @@ export default function Form({onFormSubmitted}){
     }
 
     return(
-        <form onSubmit={handleSubmit} className="space-y-3"> 
-            <Heading level={2}> Aggiungi una recensione </Heading>
-            <div className="flex flex-col">
-                <label htmlFor="name">Nome</label>
+        <form onSubmit={handleSubmit} className="space-y-3 text-white"> 
+            <div className="flex gap-3 justify-between">
+            <div className="flex flex-col ">
+                <label className="font-bold text-xl" htmlFor="name">Nome</label>
                 <input
-                className=" px-1 border-1 border-neutral-400 rounded-lg"
+                className=" px-1 py-2 border-1 border-neutral-400 rounded-lg w-xl "
                  id="name"
                  name="name" 
                  type="text" 
@@ -65,9 +65,9 @@ export default function Form({onFormSubmitted}){
                  />
             </div>
             <div className="flex flex-col">
-                <label htmlFor="vote">Voto</label>
+                <label className="text-xl font-bold" htmlFor="vote">Voto</label>
                 <input
-                className=" px-1 border-1 border-neutral-400 rounded-lg" 
+                className=" px-1 border-1 py-2 border-neutral-400 rounded-lg w-sm" 
                 id="vote" 
                 name="vote"
                 type="number" 
@@ -80,8 +80,10 @@ export default function Form({onFormSubmitted}){
 
                  />
             </div>
+
+            </div>
             <div className="flex flex-col">
-                <label htmlFor="text">Testo della recensione</label>
+                <label className="text-xl font-bold"  htmlFor="text">Testo della recensione</label>
                 <textarea 
                 className=" px-1 border-1 border-neutral-400 rounded-lg" 
                 id="text" 
@@ -96,7 +98,7 @@ export default function Form({onFormSubmitted}){
                 >
                 </textarea>
             </div>
-            <div>
+            <div  className ="w-full">
                 <Button type="submit">invia</Button>
             </div>
         </form>
