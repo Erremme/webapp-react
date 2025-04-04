@@ -3,6 +3,7 @@ import Heading from "../components/ui/Heading";
 import Paragraf from "../components/ui/Paragraf";
 import Card from "../components/ui/Card"
 import Form from "../components/ui/Form";
+import Hero from "../components/ui/Hero";
 
 export default function DesignSistem(){
    
@@ -41,6 +42,8 @@ export default function DesignSistem(){
             <Heading level={1}>Form</Heading>
             <Form />
         </div>
+
+        <Hero />
 
         <div>
             
